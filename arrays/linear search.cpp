@@ -1,3 +1,4 @@
+// linear search o(n) //
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -19,7 +20,7 @@ main()
     int key=0;
     cin>>key;
     int index = lsearch(a,n,key);
-    if(index !=0)
+    if(index !=-1)
     {
         cout<<"elemenet is present at" <<index<<endl;
     }
