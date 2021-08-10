@@ -6,6 +6,7 @@ int pairs (int a[],int n)
    {
        int x=a[i];
        for(int j=i+1; j<n; j++)
+          //for(int j=0;j<n;j++) to print all the pairs
        {
            int y=a[j];
            cout<<x<<","<<y<<endl;
