@@ -1,24 +1,26 @@
+// bubble osrt is o(n^2) //
 #include<bits/stdc++.h>
 using namespace std;
-int largestsubarraysum (int a[],int n)
-{int largestsum=0;
-int cs=0;
-   for(int i=0; i<n; i++)
-   {
-      cs=cs+a[i];
-      if(cs<0)
-      {
-          cs=0;
-      }
-       largestsum=max(largestsum,cs);
-   }
-   return largestsum;
+void bubblesort (int a[],int n)
+{
+    for(int times=0;times<n-1;times++)
+    {
+        for(int j=0;j<n-times-1;j++)
+        {
+            if(a[j] >a[j+1])
+            {
+                swap(a[j],a[j+1]);
+            }
+        }
+    }
 
 }
 main()
 {
     int a[]={-2,3,4,-1,5,-12,6,1,3}; 
     int n =sizeof(a)/sizeof(int);
-    cout<<largestsubarraysum(a,n)<<endl;
+    bubblesort(a,n);
+    for(auto x: a)
+    cout<<x<<" ";
 
 }
