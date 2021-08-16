@@ -37,3 +37,13 @@ void counting_sort(int a[],int n){
 	return;
 
 }
+
+main()
+{
+    int a[]={-2,3,4,-1,5,-12,6,1,3}; 
+    int n =sizeof(a)/sizeof(int);
+    insertionsort(a,n);
+    for(auto x: a)
+    cout<<x<<" ";
+
+}
