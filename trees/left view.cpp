@@ -1,14 +1,12 @@
-
-vector<int> leftView(Node *root)
+void leftView(Node *root)
 {
-   vector<int> v;
    if(!root)
-   return v;
+   return ;
    queue<Node*>q;
    q.push(root);
    while(!q.empty())
    {
-       v.push_back(q.front()->data);
+       cout<<q.front()->data;
        int size=q.size();
        while(size--)
        {
@@ -23,6 +21,5 @@ vector<int> leftView(Node *root)
             q.push(t->right);
            }
        }
-       return v;
    }
 }
