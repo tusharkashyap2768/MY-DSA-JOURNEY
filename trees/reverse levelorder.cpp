@@ -10,13 +10,13 @@ vector<int> reverseLevelOrder(Node *root)
     {
         Node*t=q.front();
         v.push_back(t->data);
-        if(root->right)
+        if(t->right)
         {
-            q.push(root->right);
+            q.push(t->right);
         }
-        if(root->left)
+        if(t->left)
         {
-            q.push(root->left);
+            q.push(t->left);
         }
         q.pop();
     }
