@@ -7,6 +7,7 @@ int main() {
     int a[n] = {1,3,0,0,1,2,4};
     vector<int>v;
     stack<int>s;
+    //yha loop change hui hai
     for(int i=0;i<=n;i++) {
         if(s.size()==0) {
             v.push_back(-1);
@@ -25,6 +26,7 @@ int main() {
         }
         s.push(a[i]);
     }
+    //yha reverse nhi karna hai
     for(int i=0;i<n;i++) {
         cout<<v[i]<<" ";
     }
