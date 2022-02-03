@@ -1,3 +1,30 @@
+// 
+class Solution
+{
+    public:
+    //Function to reverse a linked list.
+    struct Node* reverseList(struct Node *head)
+    {
+       if(head == NULL || head ->next == NULL)
+       return head;
+       
+       Node * prev =NULL;
+        Node * curr = head;
+         Node * fwd = head;
+        while(curr != NULL)
+        {
+        fwd = curr->next;
+        curr-> next = prev;
+        prev =curr;
+        curr =fwd;
+        }
+        return prev;
+    }
+    
+};
+
+//
+
 #include<bits/stdc++.h>
 using namespace std;
 struct Node
