@@ -1,30 +1,39 @@
-
-
-
--→ Idea is  simple inorder traversal and we keep a counter “c” which will increament when we go in ascending order (As inorder traversal of BST is always in ascending order).
-
--→So when our c is equals to k that is the node we are looking for and the node's data is our answer
-
- 
-
-void solve(Node* root,int k,int &c,int &res){
-        if(root==NULL || c>=k){
+void inorder(Node *curr,vector<int> &ans){
+        if(curr==NULL)
             return;
-        }
-        
-        solve(root->left,k,c,res);
-        c++;
-        if(c==k){
-            res = root->data;
-        }
-        solve(root->right,k,c,res);
-        return;
-        
+        inorder(curr->left,ans);
+        ans.push_back(curr->data);
+        inorder(curr->right,ans);;
     }
- 
-    int KthSmallestElement(Node *root, int k) {
-        int c = 0;
-        int res = -1;
-        solve(root,k,c,res);
-        return res;
-    }
+   int kthLargest(Node *root, int K)
+   {
+       //Your code here
+       vector<int> ans;
+       inorder(root,ans);
+       return ans[ans.size()-K];
+   }
+
+//KthSmallestElement
+class Solution {
+    public :
+ void inorder(Node*root,vector<int> &v)
+   {
+       if(!root)
+       {
+           return ;
+       }
+       inorder(root->left,v);
+       v.push_back(root->data);
+       inorder(root->right,v);
+   }
+   
+   int KthSmallestElement(Node *root, int K) {
+       // add code here.
+       vector<int> v;
+       inorder(root,v);
+       if(K>v.size())
+       return -1;
+       else
+       return v[K-1];
+   }
+};
